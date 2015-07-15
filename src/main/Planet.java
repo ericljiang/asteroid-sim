@@ -1,5 +1,5 @@
 package main;
 
-public class Planet {
+public class Planet extends Body {
 
 }

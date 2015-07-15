@@ -1,5 +1,5 @@
 package main;
 
-public class Sun {
+public class Sun extends Body {
 
 }
