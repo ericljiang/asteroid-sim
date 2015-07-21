@@ -1,15 +1,15 @@
 package main;
 
-public class Main {
+public class Simulation {
 	public SolarSystem mySolarSystem;
 	
-	public Main() {
+	public Simulation() {
 		mySolarSystem = new SolarSystem();
 	}
 	
 	public static void main(String[] args) {
-		Main main = new Main();
-		main.mySolarSystem = new SolarSystem();
+		Simulation simulation = new Simulation();
+		simulation.mySolarSystem = new SolarSystem();
 		
 	}
 }
