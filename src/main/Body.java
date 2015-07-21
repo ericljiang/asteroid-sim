@@ -11,6 +11,6 @@ public abstract class Body {
 	public void update() {
 		// Update position
 		// Update rotation
-		
+		System.out.println("update body");
 	}
 }
