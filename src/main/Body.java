@@ -8,7 +8,7 @@ public abstract class Body {
 	public float rotPeriod;
 	public float rotation; // could be replaced with getRotation() calculation
 	
-	public void update() {
+	public void update(int time) {
 		// Update position
 		// Update rotation
 		System.out.println("update body");
