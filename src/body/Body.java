@@ -1,4 +1,4 @@
-package main;
+package body;
 
 public abstract class Body {
 	public float mass;

@@ -1,4 +1,4 @@
-package main;
+package body;
 
 public class Planet extends Body {
 

@@ -1,4 +1,4 @@
-package main;
+package body;
 
 public class Sun extends Body {
 

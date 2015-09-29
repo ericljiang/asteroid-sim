@@ -2,6 +2,9 @@ package main;
 
 import java.util.ArrayList;
 
+import body.Planet;
+import body.Sun;
+
 public class SolarSystem {
 	public Sun mySun;
 	public ArrayList<Planet> myPlanets;
