@@ -1,5 +1,7 @@
 package main;
 
+import astro.SolarSystem;
+
 public class Simulation {
 	private SolarSystem mySolarSystem;
 	
