@@ -1,16 +1,29 @@
 package body;
 
+import math.Point;
+
 public abstract class Body {
-	public float mass;
-	public float radius;
-	public float a; // Semi-major axis
-	public float b; // Semi-minor axis
-	public float rotPeriod;
-	public float rotation; // could be replaced with getRotation() calculation
+	private double mass;
+	private double radius;
+	private double a; // Semi-major axis
+	private double b; // Semi-minor axis
+	private double rotPeriod;
+	
+	private Point myPosition;
+	private double myRotation;
 	
 	public void update(int time) {
 		// Update position
+		// myPosition = ;
 		// Update rotation
-		System.out.println("update body");
+		// myRotation = ;
+	}
+	
+	public Point getPosition() {
+		return myPosition;		
+	}
+	
+	public double getRotation() {
+		return myRotation;
 	}
 }
