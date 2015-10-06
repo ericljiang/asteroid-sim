@@ -6,7 +6,7 @@ import java.util.List;
 public class SolarSystem {
 	private Sun mySun;
 	private List<Satellite> myPlanets;
-	private int time;
+	private double time;
 	
 	public SolarSystem() {
 		mySun = new Sun(1.989e30, 6.96342e5, 25.05);
@@ -14,8 +14,18 @@ public class SolarSystem {
 	}
 	
 	public void update() {
-		time++;
-		mySun.update(time);
+		time += 0.1;
+		mySun.updatePosition(time);
+		for (Satellite planet : myPlanets) {
+			planet.updatePosition(time);
+		}
 	}
 
+	public void addPlanet(Satellite planet) {
+		myPlanets.add(planet);
+	}
+	
+	public Sun getSun() {
+		return mySun;
+	}
 }

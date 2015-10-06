@@ -6,9 +6,8 @@ public abstract class Body {
 	private double mass;			// kg
 	private double radius;			// km
 	private double rotationPeriod;	// days
-	
-	private Point myPosition;
-	private double myRotation;
+	protected Point myPosition;		
+	private double myRotation;		// radians
 	
 	protected Body(double mass, double radius, double rotationPeriod) {
 		this.mass = mass;
@@ -16,22 +15,15 @@ public abstract class Body {
 		this.rotationPeriod = rotationPeriod;
 	}
 	
-	public void update(int time) {
-		// Update position
-		// myPosition = ;
-		// Update rotation
-		// myRotation = ;
+	public void update(double time) {
+		updatePosition(time);
+		updateRotation(time);
 	}
 	
-	public Point getPosition() {
-		return myPosition;		
+	abstract void updatePosition(double time);
+	
+	private void updateRotation(double time) {
+		myRotation += 2 * Math.PI * time / rotationPeriod;
 	}
 	
-	public double getRotation() {
-		return myRotation;
-	}
-	
-	public double getMass() {
-		return mass;
-	}
 }

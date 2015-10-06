@@ -1,5 +1,8 @@
 package main;
 
+import math.Kepler;
+import math.Point;
+
 public class Main {
 	public static void main(String[] args) {
 		Simulation simulation = new Simulation();
