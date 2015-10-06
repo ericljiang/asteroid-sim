@@ -10,4 +10,20 @@ public class Point {
 		this.y = y;
 		this.z = z;
 	}
+	
+	public double getX() {
+		return x;
+	}
+	
+	public double getY() {
+		return y;
+	}
+	
+	public double getZ() {
+		return z;
+	}
+	
+	public String toString() {
+		return String.format("(%f, %f, %f)", x, y , z);
+	}
 }
