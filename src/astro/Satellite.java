@@ -4,6 +4,7 @@ import math.Kepler;
 import math.Point;
 
 public class Satellite extends Body {
+	// TODO switch to degrees
 	private Body myPrimary;
 	private double a; // Semi-major axis
 	private double e; // Eccentricity
@@ -15,7 +16,7 @@ public class Satellite extends Body {
 	 * @param mass Mass in kg
 	 * @param radius Radius in km
 	 * @param rotationPeriod Sidereal rotation period in days
-	 * @param a Semi-major axis in AU
+	 * @param a Semi-major axis in km
 	 * @param e Eccentricity
 	 * @param o Longitude of ascending node in radians
 	 * @param w Longitude of perihelion in radians
@@ -31,6 +32,17 @@ public class Satellite extends Body {
 		this.i = i;
 	}
 	
+	/**
+	 * @param mass Mass in kg
+	 * @param radius Radius in km
+	 * @param rotationPeriod Sidereal rotation period in days
+	 * @param a Semi-major axis in km
+	 * @param e Eccentricity
+	 * @param o Longitude of ascending node in radians
+	 * @param w Longitude of perihelion in radians
+	 * @param i Orbital inclination in radians
+	 * @param primary Parent body
+	 */
 	public Satellite(double mass, double radius, double rotationPeriod,
 					 double a, double e, double o, double w, double i,
 					 Body primary) {

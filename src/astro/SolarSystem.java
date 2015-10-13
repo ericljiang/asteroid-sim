@@ -22,12 +22,12 @@ public class SolarSystem {
 	}
 	
 	public void update() {
-		time += 0.1;
+		time += 0.05;
 		mySun.update(time);
 		for (Satellite planet : myPlanets) {
 			planet.update(time);
 		}
-		//System.out.println("Model updated");
+		System.out.println("Time: " + time);
 	}
 
 	public void addPlanet(Satellite planet) {

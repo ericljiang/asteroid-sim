@@ -1,17 +1,40 @@
 package math;
 
 public class Kepler {
-	/**
-	 * @param a	Semi-major axis in astronomical units
-	 * @return	Returns P, the period of orbit in years.
-	 */
-	public static double period(double a) {
-		return Math.pow(a, 3.0 / 2);
+	// TODO switch to degrees
+	
+	public static final double KM_PER_AU = 149597871;
+	public static final double DAYS_PER_YEAR = 365.26;
+	
+	public static double toAU(double km) {
+		return km / KM_PER_AU;
+	}
+	
+	public static double toKm(double au) {
+		return au * KM_PER_AU;
+	}
+	
+	public static double toYears(double days) {
+		return days / DAYS_PER_YEAR;
+	}
+	
+	public static double toDays(double years) {
+		return years * DAYS_PER_YEAR;
 	}
 	
 	/**
-	 * @param t	Time since last perihelion in years
-	 * @param P	Period of orbit in years
+	 * @param a	Semi-major axis in kilometers
+	 * @return	Returns P, the period of orbit in days.
+	 */
+	public static double period(double a) {
+		double axis = toAU(a);
+		double period = Math.pow(axis, 1.5);
+		return toDays(period);
+	}
+	
+	/**
+	 * @param t	Time since last perihelion in days
+	 * @param P	Period of orbit in days
 	 * @return	Returns M, the mean anomaly in radians. The mean anomaly is the
 	 * 			angle between the perihelion and the mean planet.
 	 */
@@ -49,7 +72,7 @@ public class Kepler {
 	
 	/**
 	 * @param e	Eccentricity of orbit
-	 * @param E	Eccentric anomaly
+	 * @param E	Eccentric anomaly in radians
 	 * @return	Returns v, the true anomaly in radians. The true anomaly is the
 	 * 			angle of the planet from the perihelion.
 	 */
@@ -58,13 +81,15 @@ public class Kepler {
 	}
 	
 	/**
-	 * @param a	Semi-major axis
+	 * @param a	Semi-major axis in kilometers
 	 * @param e	Eccentricity of orbit
-	 * @param v	True anomaly
-	 * @return	Returns r, the planet's radial distance from the sun.
+	 * @param v	True anomaly in radians
+	 * @return	Returns r, the planet's radial distance from the sun in kilometers.
 	 */
 	public static double radialDistance(double a, double e, double v) {
-		return a * (1 - Math.pow(e, 2)) / (1 + e * Math.cos(v));
+		double axis = toAU(a);
+		double r = axis * (1 - Math.pow(e, 2)) / (1 + e * Math.cos(v));
+		return toKm(r);
 	}
 	
 	/**
