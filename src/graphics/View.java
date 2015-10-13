@@ -43,8 +43,8 @@ public class View extends Scene {
 							position.getY() / Kepler.KM_PER_AU,
 							position.getZ() / Kepler.KM_PER_AU);
 			
-			double rotation = body.getRotation();
-			gl.glRotated(rotation, 0, 0, 1);
+			/*double rotation = body.getRotation();
+			gl.glRotated(rotation, 0, 0, 1);*/
 
 			// TODO implement radius (logarithmic?)
 			double radius = body.getRadius();
@@ -54,7 +54,7 @@ public class View extends Scene {
 
 	@Override
 	public void setCamera(GL2 gl, GLU glu, GLUT glut) {
-		glu.gluLookAt(0, 5, 5,  // from
+		glu.gluLookAt(0, 15, 5,  // from
 				  	  0, 0, 0,	 // to
 				  	  0, 0, 1);	 // up
 	}
