@@ -11,7 +11,7 @@ public class Sun extends Body {
 
 	@Override
 	void updatePosition(double time) {
-		// position of sun alwasy (0, 0, 0)
+		// position of sun always (0, 0, 0)
 	}
 
 }
