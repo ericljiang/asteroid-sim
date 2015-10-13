@@ -26,4 +26,11 @@ public abstract class Body {
 		myRotation += 2 * Math.PI * time / rotationPeriod;
 	}
 	
+	public Point getPosition() {
+		return myPosition;
+	}
+	
+	public double getRotation() {
+		return myRotation;
+	}
 }
