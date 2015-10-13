@@ -8,9 +8,17 @@ public class SolarSystem {
 	private List<Satellite> myPlanets;
 	private double time;
 	
+	public SolarSystem(Sun sun, List<Satellite> planets) {
+		mySun = sun;
+		myPlanets = planets;
+	}
+	
+	public SolarSystem(Sun sun) {
+		this(sun, new ArrayList<Satellite>());
+	}
+	
 	public SolarSystem() {
-		mySun = new Sun(1.989e30, 6.96342e5, 25.05);
-		myPlanets = new ArrayList<Satellite>();
+		this(new Sun(1.989e30, 6.96342e5, 25.05));
 	}
 	
 	public void update() {
