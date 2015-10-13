@@ -6,7 +6,7 @@ public abstract class Body {
 	private double mass;			// kg
 	private double radius;			// km
 	private double rotationPeriod;	// days
-	protected Point myPosition;		
+	private Point myPosition;		// AU
 	private double myRotation;		// radians
 	
 	protected Body(double mass, double radius, double rotationPeriod) {
@@ -23,11 +23,15 @@ public abstract class Body {
 	abstract void updatePosition(double time);
 	
 	private void updateRotation(double time) {
-		myRotation += 2 * Math.PI * time / rotationPeriod;
+		myRotation = 2 * Math.PI * ((time / rotationPeriod) % 1);
 	}
 	
 	public Point getPosition() {
 		return myPosition;
+	}
+	
+	protected void setPosition(Point position) {
+		myPosition = position;
 	}
 	
 	public double getRotation() {

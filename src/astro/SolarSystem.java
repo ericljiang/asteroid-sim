@@ -15,11 +15,11 @@ public class SolarSystem {
 	
 	public void update() {
 		time += 0.1;
-		mySun.updatePosition(time);
+		mySun.update(time);
 		for (Satellite planet : myPlanets) {
-			planet.updatePosition(time);
+			planet.update(time);
 		}
-		System.out.println("Model updated");
+		//System.out.println("Model updated");
 	}
 
 	public void addPlanet(Satellite planet) {
