@@ -8,6 +8,7 @@ import com.jogamp.opengl.util.gl2.GLUT;
 import astro.Body;
 import astro.SolarSystem;
 import framework.Scene;
+import math.Kepler;
 import math.Point;
 
 public class View extends Scene {
@@ -37,18 +38,23 @@ public class View extends Scene {
 
 	private void drawPlanet(Body body, GL2 gl, GLU glu, GLUT glut) {
 		gl.glPushMatrix(); {
-			double rotation = Math.toDegrees(body.getRotation());
-			Point position = body.getPosition();
+			Point position = body.getPosition();			
+			gl.glTranslated(position.getX() / Kepler.KM_PER_AU,
+							position.getY() / Kepler.KM_PER_AU,
+							position.getZ() / Kepler.KM_PER_AU);
+			
+			double rotation = body.getRotation();
 			gl.glRotated(rotation, 0, 0, 1);
-			gl.glTranslated(position.getX(), position.getY(), position.getZ());
+
 			// TODO implement radius (logarithmic?)
-			glut.glutWireSphere(1, 8, 8);
+			double radius = body.getRadius();
+			glut.glutWireSphere(0.1, 8, 8);
 		} gl.glPopMatrix();
 	}
 
 	@Override
 	public void setCamera(GL2 gl, GLU glu, GLUT glut) {
-		glu.gluLookAt(0, 15, 15,  // from
+		glu.gluLookAt(0, 5, 5,  // from
 				  	  0, 0, 0,	 // to
 				  	  0, 0, 1);	 // up
 	}
