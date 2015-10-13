@@ -19,6 +19,7 @@ public class SolarSystem {
 		for (Satellite planet : myPlanets) {
 			planet.updatePosition(time);
 		}
+		System.out.println("Model updated");
 	}
 
 	public void addPlanet(Satellite planet) {
@@ -27,5 +28,9 @@ public class SolarSystem {
 	
 	public Sun getSun() {
 		return mySun;
+	}
+
+	public List<Satellite> getPlanets() {
+		return myPlanets;
 	}
 }
