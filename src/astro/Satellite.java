@@ -56,8 +56,10 @@ public class Satellite extends Body {
 		double E = Kepler.eccenticAnomaly(e, M, .00001);
 		double v = Kepler.trueAnomaly(e, E);
 		double r = Kepler.radialDistance(a, e, v);
+		
 		Point ecliptic = Kepler.polarToEcliptic(r, v, o, w, i);
 		Point equatorial = Kepler.eclipticToEquatorial(ecliptic, i);
-		super.setPosition(equatorial);
+		
+		super.setPosition(Point.add(equatorial, myPrimary.getPosition()));
 	}
 }
