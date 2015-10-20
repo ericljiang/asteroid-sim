@@ -8,8 +8,8 @@ import com.jogamp.opengl.util.gl2.GLUT;
 import astro.Body;
 import astro.SolarSystem;
 import framework.Scene;
-import math.Kepler;
-import math.Point;
+import utility.Kepler;
+import utility.Point;
 
 public class View extends Scene {
 	private SolarSystem mySolarSystem;

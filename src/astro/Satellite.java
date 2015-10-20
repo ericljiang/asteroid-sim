@@ -1,7 +1,7 @@
 package astro;
 
-import math.Kepler;
-import math.Point;
+import utility.Kepler;
+import utility.Point;
 
 public class Satellite extends Body {
 	// TODO switch to degrees

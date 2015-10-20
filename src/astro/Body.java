@@ -1,6 +1,6 @@
 package astro;
 
-import math.Point;
+import utility.Point;
 
 public abstract class Body {
 	private double mass;			// kg

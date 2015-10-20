@@ -1,4 +1,4 @@
-package math;
+package utility;
 
 public class Kepler {
 	// TODO switch to degrees
