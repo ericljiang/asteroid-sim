@@ -12,10 +12,20 @@ import utility.Kepler;
 import utility.Point;
 
 public class View extends Scene {
+	// TODO
+	private static final double MAX_RADIUS = 2;
+	private static final double MIN_RADIUS = 1;
+	
 	private SolarSystem mySolarSystem;
 	
 	public View(SolarSystem solar) {
 		mySolarSystem = solar;
+	}
+	
+	@Override
+	public void init(GL2 gl, GLU glu, GLUT glut) {
+		// Calculate logarithmic radius scale parameters
+		
 	}
 	
 	@Override
@@ -43,12 +53,12 @@ public class View extends Scene {
 							position.getY() / Kepler.KM_PER_AU,
 							position.getZ() / Kepler.KM_PER_AU);
 			
-			/*double rotation = body.getRotation();
-			gl.glRotated(rotation, 0, 0, 1);*/
+			//double rotation = body.getRotation();
+			//gl.glRotated(rotation, 0, 0, 1);
 
 			// TODO implement radius (logarithmic?)
-			double radius = body.getRadius();
-			glut.glutWireSphere(0.1, 8, 8);
+			double radius = Math.log(body.getRadius()) / 40;
+			glut.glutWireSphere(radius, 8, 8);
 		} gl.glPopMatrix();
 	}
 
