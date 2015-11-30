@@ -11,26 +11,6 @@ public class Satellite extends Body {
 	private double o; // Longitude of ascending node
 	private double w; // Longitude of perihelion
 	private double i; // Orbital inclination
-
-	/**
-	 * @param mass Mass in kg
-	 * @param radius Radius in km
-	 * @param rotationPeriod Sidereal rotation period in days
-	 * @param a Semi-major axis in km
-	 * @param e Eccentricity
-	 * @param o Longitude of ascending node in radians
-	 * @param w Longitude of perihelion in radians
-	 * @param i Orbital inclination in radians
-	 */
-	public Satellite(double mass, double radius, double rotationPeriod,
-					 double a, double e, double o, double w, double i) {
-		super(mass, radius, rotationPeriod);
-		this.a = a;
-		this.e = e;
-		this.o = o;
-		this.w = w;
-		this.i = i;
-	}
 	
 	/**
 	 * @param mass Mass in kg
@@ -38,15 +18,20 @@ public class Satellite extends Body {
 	 * @param rotationPeriod Sidereal rotation period in days
 	 * @param a Semi-major axis in km
 	 * @param e Eccentricity
-	 * @param o Longitude of ascending node in radians
-	 * @param w Longitude of perihelion in radians
-	 * @param i Orbital inclination in radians
+	 * @param o Longitude of ascending node in degrees
+	 * @param w Longitude of perihelion in degrees
+	 * @param i Orbital inclination in degrees
 	 * @param primary Parent body
 	 */
 	public Satellite(double mass, double radius, double rotationPeriod,
 					 double a, double e, double o, double w, double i,
 					 Body primary) {
-		this(mass, radius, rotationPeriod, a, e, o, w, i);
+		super(mass, radius, rotationPeriod);
+		this.a = a;
+		this.e = e;
+		this.o = o;
+		this.w = w;
+		this.i = i;
 		myPrimary = primary;
 	}
 	
