@@ -1,0 +1,4 @@
+name,mass (kg),radius (km),rotational period (d),semi-major axis (km),eccentricity,longitude of ascending node (deg),longitude of perihelion (deg),orbital inclination (deg)
+sun,1.99E+30,696300,24.47,,,,,
+earth,5.97E+24,6371,0.99726968,149598261,0.0167,-11.26064,102.947,7.155
+jupiter,1.90E+27,69911,0.413542,778547200,0.048775,100.492,275.066,6.09
