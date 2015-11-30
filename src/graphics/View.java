@@ -57,7 +57,7 @@ public class View extends Scene {
 			//gl.glRotated(rotation, 0, 0, 1);
 
 			// TODO implement radius (logarithmic?)
-			double radius = Math.log(body.getRadius()) / 40;
+			double radius = Math.log(body.getRadius()) / 70;
 			glut.glutWireSphere(radius, 8, 8);
 		} gl.glPopMatrix();
 	}
