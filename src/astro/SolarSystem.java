@@ -41,4 +41,24 @@ public class SolarSystem {
 	public List<Satellite> getPlanets() {
 		return myPlanets;
 	}
+	
+	public double getMaxRadius() {
+		double r = mySun.getRadius();
+		for (Satellite planet : myPlanets) {
+			if (planet.getRadius() > r) {
+				r = planet.getRadius();
+			}
+		}
+		return r;
+	}
+	
+	public double getMinRadius() {
+		double r = mySun.getRadius();
+		for (Satellite planet : myPlanets) {
+			if (planet.getRadius() < r) {
+				r = planet.getRadius();
+			}
+		}
+		return r;
+	}
 }

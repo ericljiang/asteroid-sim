@@ -13,19 +13,24 @@ import utility.Point;
 
 public class View extends Scene {
 	// TODO
-	private static final double MAX_RADIUS = 2;
-	private static final double MIN_RADIUS = 1;
+	private static final double MAX_DISPLAY_RADIUS = 0.2;
+	private static final double MIN_DISPLAY_RADIUS = 0.1;
+	private double maxRadius;
+	private double minRadius;
 	
 	private SolarSystem mySolarSystem;
 	
 	public View(SolarSystem solar) {
 		mySolarSystem = solar;
-	}
-	
-	@Override
-	public void init(GL2 gl, GLU glu, GLUT glut) {
+
 		// Calculate logarithmic radius scale parameters
-		
+		maxRadius = solar.getMaxRadius();
+		minRadius = solar.getMinRadius();
+		System.out.println("====");
+		System.out.println(maxRadius);
+		System.out.println(minRadius);
+		System.out.println(displayRadius(maxRadius));
+		System.out.println(displayRadius(minRadius));
 	}
 	
 	@Override
@@ -57,9 +62,15 @@ public class View extends Scene {
 			//gl.glRotated(rotation, 0, 0, 1);
 
 			// TODO implement radius (logarithmic?)
-			double radius = Math.log(body.getRadius()) / 70;
-			glut.glutWireSphere(radius, 8, 8);
+			glut.glutWireSphere(displayRadius(body.getRadius()), 8, 8);
 		} gl.glPopMatrix();
+	}
+	
+	private double displayRadius(double r) {
+		return Math.log(r - minRadius + 1)
+			 / Math.log(maxRadius - minRadius + 1)
+			 * (MAX_DISPLAY_RADIUS - MIN_DISPLAY_RADIUS)
+			 + MIN_DISPLAY_RADIUS;
 	}
 
 	@Override
