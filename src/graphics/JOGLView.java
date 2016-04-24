@@ -11,7 +11,7 @@ import framework.Scene;
 import utility.Kepler;
 import utility.Point;
 
-public class View extends Scene {
+public class JOGLView extends Scene {
 	// TODO
 	private static final double MAX_DISPLAY_RADIUS = 0.2;
 	private static final double MIN_DISPLAY_RADIUS = 0.1;
@@ -20,7 +20,7 @@ public class View extends Scene {
 	
 	private SolarSystem mySolarSystem;
 	
-	public View(SolarSystem solar) {
+	public JOGLView(SolarSystem solar) {
 		mySolarSystem = solar;
 
 		// Calculate logarithmic radius scale parameters
